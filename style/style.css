@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    background-color: #232323;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+}
+.painel-lista{
+    /* margin: auto; */
+    background-color: yellow;
+    width: 500px;
+    /* height: 100px; */
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    
+}
+.paniel-novaTarefa, .painel-tarefa{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.addTarefa, .tarefa-da-lista{
+    background-color: rgba(52, 52, 52, 0.555);
+    font-size: large;
+    width: 75%;
+    height: 40px;
+    margin-bottom: 5px;
+    padding-left: 15px;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+}
+.tarefa-da-lista{
+    width: 60%;
+}
+.btnAdd, .btnCheck, .btnEdit, .btnExclui{
+    background-color: rgba(52, 52, 52, 0.555);
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+}
+.btn:active, .addTarefa:active, .tarefa-da-lista:active{
+    background-color: #232323;
+}
+.btn img{
+    width: 60%;
+    height: 60%;
+    margin: auto;
+    display: block;
+}
