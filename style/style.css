@@ -23,29 +23,39 @@
     border-radius: 10px;
     
 }
-.paniel-novaTarefa, .painel-tarefa{
+.paniel-novaTarefa, .painel-lista-tarefa{
     width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
-.addTarefa, .tarefa-da-lista{
+input{
     background-color: rgba(52, 52, 52, 0.555);
     font-size: large;
-    width: 75%;
+    width: 85%;
     height: 40px;
-    margin-bottom: 5px;
     padding-left: 15px;
     border-radius: 25px;
     border: none;
     outline: none;
 }
-.tarefa-da-lista{
-    width: 60%;
+/* .addTarefa:hover, .tarefa-da-lista:hover{
+    background-color: white;
+} */
+.painel-lista-tarefa{
+    position: relative;
+    justify-content: end;
+    /* border: 1px solid red; */
+    /* padding-left: 10px; */
 }
-.btnAdd, .btnCheck, .btnEdit, .btnExclui{
-    background-color: rgba(52, 52, 52, 0.555);
+.painel-lista-tarefa input{
+    background-color: yellow;
+    width: 70%;
+    margin: 10px;
+}
+.btnAdd, .painel-lista-tarefa button{
+    background-color: yellow;
     width: 40px;
     height: 40px;
     box-sizing: border-box;
@@ -53,10 +63,14 @@
     border: none;
     cursor: pointer;
 }
-.btn:active, .addTarefa:active, .tarefa-da-lista:active{
+button, .addTarefa:active{
     background-color: #232323;
 }
-.btn img{
+.btnCheck{
+    position: absolute;
+    left: 0px;
+}
+button img{
     width: 60%;
     height: 60%;
     margin: auto;
