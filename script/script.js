@@ -6,8 +6,19 @@ let btnNovaTarefa = jQuery(".btnAdd");
 /* let btnChecked = jQuery("#checked").hide()
 let btnUnChecked = jQuery("#unchecked") */
 
+
+novaTarefa.keypress((e) => {
+    if (novaTarefa.val() != '') {
+        if (e.keyCode == 13) {
+            criarDivTarefa();
+        }
+    }
+})
+
 btnNovaTarefa.click(function addTarefa() {
-    criarDivTarefa();
+    if (novaTarefa.val() != '') {
+        criarDivTarefa();
+    }
 })
 
 function criarDivTarefa() {
@@ -26,19 +37,36 @@ function criarDivTarefa() {
     let btnExclui = jQuery('<button></button>').addClass("btnExclui btn").append('<img src="assets/icon/bin.svg" alt="Ícone sinal de mais">')
 
     painelListaTarefa.append(btnCheck).append(btnUnCheck).append(inputTarefa).append(btnEdit).append(btnExclui);
+
     
     painelLista.append(painelListaTarefa)
+
     addTarefaInput(inputTarefa)
+    editaTarefa(btnEdit,inputTarefa)
     MarcaTarefaFeita(btnCheck,btnUnCheck,btnEdit,btnExclui,inputTarefa)
 
     return painelLista
 
 }
 
+function editaTarefa(btnEdit, inputTarefa) {
+    btnEdit.click(() => {
+        inputTarefa.removeAttr("readonly","readonly").focus()
+        inputTarefa.keypress((e) => {
+
+            if (inputTarefa.focus()) {
+                if (e.keyCode == 13) {
+                    inputTarefa.attr("readonly","readonly");
+                }
+            }
+        })
+    })
+}
+
 function addTarefaInput(tarefaLista) {
     let tarefa = novaTarefa.val();
     tarefaLista.val(tarefa);
-    novaTarefa.val("")
+    novaTarefa.val('')
 }
 
 function MarcaTarefaFeita(btnChecked, btnUnChecked,x,y, tarefaLista) {
@@ -46,7 +74,7 @@ function MarcaTarefaFeita(btnChecked, btnUnChecked,x,y, tarefaLista) {
 
     btnUnChecked.click((e) => {
         btnChecked.fadeToggle();
-        btnUnChecked.fadeToggle();
+        btnUnChecked.fadeToggle(.5);
         tarefaLista.css({
             "font-style": "italic",
             "text-decoration": "line-through",
@@ -54,7 +82,7 @@ function MarcaTarefaFeita(btnChecked, btnUnChecked,x,y, tarefaLista) {
     })
     btnChecked.click((e) => {
         btnChecked.fadeToggle();
-        btnUnChecked.fadeToggle();
+        btnUnChecked.fadeToggle(.5);
         tarefaLista.css({
             "font-style": "normal",
             "text-decoration": "none",

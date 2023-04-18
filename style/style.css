@@ -28,10 +28,12 @@
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 input{
     background-color: rgba(52, 52, 52, 0.555);
+    caret-color: white ;
+    text-align: center;
     font-size: large;
     width: 85%;
     height: 40px;
@@ -45,12 +47,14 @@ input{
 } */
 .painel-lista-tarefa{
     position: relative;
-    justify-content: end;
+    justify-content: space-around;
     /* border: 1px solid red; */
     /* padding-left: 10px; */
 }
 .painel-lista-tarefa input{
     background-color: yellow;
+    caret-color: black;
+    text-align: center;
     width: 70%;
     margin: 10px;
 }
